@@ -1,0 +1,97 @@
+<div class="container-wrapper">
+    <h3 class="title-page text-center">Tops 10 tài xế được yêu thích nhất</h3>
+    <div class="container-tops">
+        <div class="container-tops-3">
+            <div class="top-2">
+                <h3 class="title-rank">2nd Rank</h3>
+                <div class="avatar">
+                    <img src="{{listTopsIn3[1]?.user?.image_url}}" alt="">
+                </div>
+                <div class="star-ranking">
+                    <ng-template #t let-fill="fill">
+                        <i class="fa-solid fa-star">
+                            <i *ngIf="fill > 0" class="fa-solid fa-star filled" [style.width.%]="fill"></i>
+                        </i>
+                    </ng-template>
+                    <ngb-rating [(rate)]="listTopsIn3[1].total_rating" [starTemplate]="t" [max]="5" [readonly]="true"></ngb-rating>
+                </div>
+                <div class="info-tops-in-3">
+                    <p class="username">{{listTopsIn3[1].full_name}}</p>
+                    <p class="email">{{listTopsIn3[1].phone_number}}</p>
+                </div>
+                <div class="point-number"><span>{{listTopsIn3[1].point}}</span></div>
+                <span class="point-text">Points</span>
+            </div>
+
+            <div class="top-1">
+                <h3 class="title-rank">1st Rank</h3>
+                <div class="avatar">
+                    <img src="{{listTopsIn3[0]?.user?.image_url}}" alt="">
+                </div>
+                <div class="star-ranking">
+                    <ng-template #t let-fill="fill">
+                        <i class="fa-solid fa-star">
+                            <i *ngIf="fill > 0" class="fa-solid fa-star filled" [style.width.%]="fill"></i>
+                        </i>
+                    </ng-template>
+                    <ngb-rating [(rate)]="listTopsIn3[0].total_rating" [starTemplate]="t" [max]="5" [readonly]="true"></ngb-rating>
+                </div>
+                <div class="info-tops-in-3">
+                    <p class="username">{{listTopsIn3[0].full_name}}</p>
+                    <p class="email">{{listTopsIn3[0].phone_number}}</p>
+                </div>
+                <div class="point-number"><span>{{listTopsIn3[1].point}}</span></div>
+                <span class="point-text">Points</span>
+            </div>
+
+            <div class="top-3">
+                <h3 class="title-rank">3rd Rank</h3>
+                <div class="avatar">
+                    <img src="{{listTopsIn3[2]?.user?.image_url}}" alt="">
+                </div>
+                <div class="star-ranking">
+                    <ng-template #t let-fill="fill">
+                        <i class="fa-solid fa-star">
+                            <i *ngIf="fill > 0" class="fa-solid fa-star filled" [style.width.%]="fill"></i>
+                        </i>
+                    </ng-template>
+                    <ngb-rating [(rate)]="listTopsIn3[2].total_rating" [starTemplate]="t" [max]="5" [readonly]="true"></ngb-rating>
+                </div>
+                <div class="info-tops-in-3">
+                    <p class="username">{{listTopsIn3[2].full_name}}</p>
+                    <p class="email">{{listTopsIn3[2].phone_number}}</p>
+                </div>
+                <div class="point-number"><span>{{listTopsIn3[2].point}}</span></div>
+                <span class="point-text">Points</span>
+            </div>
+        </div>
+
+        <div class="container-tops-left">
+            <ul class="list-tops-left">
+                <li class="list-tops-left-item" *ngFor="let item of listTopsLeft; let x = index">
+                    <div class="number-ranking-lefts">{{x + 4}}th</div>
+                    <div class="avatar">
+                        <img src="{{item?.user?.image_url}}"/>
+                    </div>
+                    <div class="info-basic">
+                        <span class="username">{{item.full_name}}</span>
+                        <span class="email">{{item.phone_number}}</span>
+                    </div>
+                    <div class="star-ranking star-ranking-tops-left">
+                        <ng-template #t let-fill="fill">
+                            <i class="fa-solid fa-star">
+                                <i *ngIf="fill > 0" class="fa-solid fa-star filled" [style.width.%]="fill"></i>
+                            </i>
+                        </ng-template>
+                        <ngb-rating [(rate)]="item.total_rating" [starTemplate]="t" [max]="5" [readonly]="true"></ngb-rating>
+                        <span>{{item.total_rating}} sao</span>
+                    </div>
+                    <div class="container-score">
+                        <span class="score-text">Score</span>
+                        <span class="score-number">{{item.point}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

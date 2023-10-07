@@ -1,0 +1,120 @@
+<div class="table-auto" style="margin-top: 5%">
+  <table class="table table-bordered align-middle table-row-dashed">
+    <thead class="text-center table-success">
+      <tr>
+        <th *ngFor="let columnHead of tableConfig; let x = index">
+          <div 
+          *ngIf="columnHead['dataField'] !== 'Hành động'"
+            [ngClass]="
+              columnHead['dataField'] === 'ID' || columnHead['dataField'] === 'ID Account'
+                ? 'smaller-width'
+                : 'adjust-width-auto'
+            "
+          >
+            {{ columnHead["title"] }}
+          </div>
+          <div
+          *ngIf="columnHead['dataField'] !== 'ID' && columnHead['dataField'] !== 'ID Account'  && columnHead['dataField'] === 'Hành động'"
+            [ngClass]="
+              columnHead['dataField'] === 'Hành động'
+                ? 'adjust-width-auto'
+                : 'smaller-width'
+            "
+          >
+            {{ columnHead["title"] }}
+          </div>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody class="text-center">
+      <tr
+        *ngFor="
+          let columnData of tableContent
+            | paginate
+              : {
+                  itemsPerPage: itemsPerPage,
+                  currentPage: pResult,
+                  totalItems: tableContent.length
+                };
+          let i = index
+        "
+      >
+        <td *ngFor="let columnHead of tableConfig; let x = index">
+          <div
+            [ngClass]="
+              columnHead['dataField'] === 'ID' || columnHead['dataField'] === 'ID Account'
+                ? 'smaller-width'
+                : 'adjust-width-auto'
+            "
+          >
+            {{ columnData[columnHead["dataField"]] }}
+          </div>
+
+          <div
+            *ngIf="
+              columnHead['dataField'] === 'Hành động' &&
+              columnHead['dataField'] !== 'ID' && columnHead['dataField'] !== 'ID Account'
+            "
+            [ngClass]="
+              columnHead['dataField'] === 'Hành động'
+                ? 'adjust-width-auto'
+                : 'smaller-width'
+            "
+          >
+            <button
+              type="button"
+              class="btn btn-warning btn-customer-in-table"
+              (click)="handleEdit(columnData)"
+            >
+              Sửa
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger btn-customer-in-table"
+              (click)="handleConfirmDelete(columnData)"
+            >
+              Xóa
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary btn-customer-in-table"
+              (click)="handleDisable(columnData)"
+            >
+              Disable
+            </button>
+            <button
+              type="button"
+              class="btn btn-success btn-customer-in-table"
+              (click)="handleEnable(columnData)"
+            >
+              Enable
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div
+  class="d-flex align-items-center pagination-wrap"
+  *ngIf="tableContent && tableContent.length > 0"
+>
+  <span
+    >Hiển thị
+    {{
+      itemsPerPage * pResult < tableContent.length
+        ? itemsPerPage * pResult
+        : tableContent.length
+    }}
+    kết quả trên {{ tableContent.length }}</span
+  >
+  <div class="pagination-container">
+    <pagination-controls
+      (pageChange)="pResult = $event"
+      previousLabel=""
+      nextLabel=""
+    ></pagination-controls>
+  </div>
+</div>

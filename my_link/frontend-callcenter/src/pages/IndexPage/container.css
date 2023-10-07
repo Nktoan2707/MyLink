@@ -1,0 +1,79 @@
+.show-container > .rs-container {
+  margin-bottom: 40px;
+  position: static;
+  top: 0;
+  bottom: 0;
+}
+.show-container .rs-header,
+.show-container .rs-content,
+.show-container .rs-footer,
+.show-container .rs-sidebar {
+  background-color: #3498ff;
+  color: #fff;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+.show-container .rs-header,
+.show-container .rs-footer {
+  line-height: 56px;
+  background-color: #59afff;
+}
+.show-container .rs-content {
+  line-height: 120px;
+  background-color: #80ddff;
+}
+.show-container .rs-sidebar {
+  line-height: 120px;
+}
+.show-fake-browser {
+  border: 1px solid #e5e5ea;
+  box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.28);
+  border-radius: 4px;
+  background-color: #f7f7fa;
+}
+.show-fake-browser.sidebar-page .rs-sidebar {
+  height: 700px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12), 0 0 10px rgba(0, 0, 0, 0.06);
+}
+.show-fake-browser.sidebar-page .rs-sidenav {
+  flex: 1 1 auto;
+  width: 100%;
+}
+.show-fake-browser.sidebar-page .rs-sidenav-collapse-in {
+  overflow-y: auto;
+}
+.show-fake-browser.sidebar-page .rs-header {
+  padding: 0 20px;
+}
+.show-fake-browser.sidebar-page .rs-content {
+  padding: 20px;
+  margin: 20px;
+  background-color: #f7f7fa;
+}
+.show-fake-browser.sidebar-page .nav-toggle {
+  border-top: 1px solid #e5e5ea;
+}
+.show-fake-browser.navbar-page .rs-content {
+  padding: 20px;
+  margin: 20px;
+  height: 500px;
+  background-color: #f7f7fa;
+}
+.show-fake-browser.navbar-page .rs-footer {
+  padding: 20px;
+}
+.show-fake-browser.login-page .rs-content {
+  padding: 20px;
+  margin: 20px;
+  height: 500px;
+}
+.show-fake-browser.login-page .rs-footer {
+  padding: 20px;
+}
+.show-fake-browser.login-page .rs-panel {
+  background: #fff;
+  margin-top: 70px;
+}

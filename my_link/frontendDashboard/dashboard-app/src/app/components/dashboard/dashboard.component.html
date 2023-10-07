@@ -1,0 +1,111 @@
+<div class="container-wrapper">
+    <div class="title-page">Dashboard</div>
+    <div class="overview">
+        <div class="component-overview component-overview-revenue">
+            <div class="description-overview-item">
+                <h3 class="title">Doanh thu hôm nay</h3>
+                <div class="amount">{{ data_header.revenueToday }}K</div>
+            </div>
+            <div class="icon-item">
+                <i class="fa-solid fa-money-bill-1"></i>
+            </div>
+        </div>
+
+        <div class="component-overview component-overview-new-resgister">
+            <div class="description-overview-item">
+                <h3 class="title">Người dùng mới</h3>
+                <div class="amount">{{ data_header.newUsers }}</div>
+            </div>
+            <div class="icon-item">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+        </div>
+
+        <div class="component-overview component-overview-employee">
+            <div class="description-overview-item">
+                <h3 class="title">Số lượng nhân viên</h3>
+                <div class="amount">{{data_header.totalEmployees}}</div>
+            </div>
+            <div class="icon-item">
+                <i class="fa-solid fa-users-line"></i>
+            </div>
+        </div>
+
+        <div class="component-overview component-overview-taxies">
+            <div class="description-overview-item">
+                <h3 class="title">Số lượng tài xế</h3>
+                <div class="amount">{{data_header.totalDrivers}}</div>
+            </div>
+            <div class="icon-item">
+                <i class="fa-solid fa-taxi"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-list-user-daily">
+        <div class="chart-user-daily">
+            <h3 class="text-center">Biểu đồ thể hiện số lượng khách hàng và tài xế mới trong năm 2023</h3>
+            <app-chart [chartData]="dataSetsChartBar" [chartLabels]="labelsChartX"></app-chart>
+        </div>
+
+        <!-- <div class="list-user-daily">
+            <ul class="list-user">
+                <li class="user-item">
+                    <div class="image-avatar">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1686472561/products/wd5objsvkdkib6oe6tke.jpg" alt="">
+                    </div>
+                    <div class="short-info">
+                        <span class="username">Username</span>
+                        <span class="date-resgister">23-10-2020</span>
+                    </div>
+                    <div class="time-register">Vừa đăng kí</div>
+                </li>
+                <li class="user-item">
+                    <div class="image-avatar">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1686472561/products/wd5objsvkdkib6oe6tke.jpg" alt="">
+                    </div>
+                    <div class="short-info">
+                        <span class="username">Username</span>
+                        <span class="date-resgister">23-10-2020</span>
+                    </div>
+                    <div class="time-register">15 phút trớc</div>
+                </li>
+                <li class="user-item">
+                    <div class="image-avatar">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1686472561/products/wd5objsvkdkib6oe6tke.jpg" alt="">
+                    </div>
+                    <div class="short-info">
+                        <span class="username">Username</span>
+                        <span class="date-resgister">23-10-2020</span>
+                    </div>
+                    <div class="time-register">1 tiếng trước</div>
+                </li>
+                <li class="user-item">
+                    <div class="image-avatar">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1686472561/products/wd5objsvkdkib6oe6tke.jpg" alt="">
+                    </div>
+                    <div class="short-info">
+                        <span class="username">Username</span>
+                        <span class="date-resgister">23-10-2020</span>
+                    </div>
+                    <div class="time-register">1 tiếng trước</div>
+                </li>
+            </ul>
+
+            <button type="button" class="btn btn-primary btn-custom btn-left"><i class="fa-solid fa-angles-left"></i> Trở lại</button>
+            <button type="button" class="btn btn-success btn-custom btn-right">Kế tiếp <i class="fa-solid fa-angles-right"></i></button>
+        </div> -->
+    </div>
+
+    <div class="overview-revenue">
+        <div class="chart-bar-revenue">
+            <h3 class="text-center">Biểu đồ thể hiện sự tăng trưởng doanh thu</h3>
+            <app-chart [chartLabels]="labelsChartX" [chartData]="dataSetsChartBarAndLine"></app-chart>
+        </div>
+
+        <div class="chart-pie-revenue">
+            <h3 class="text-center">Biểu đồ tròn thể hiện tỉ lệ khách hàng tại các tỉnh thành</h3>
+            <app-pie-chart [chartData]="dataPieChart"></app-pie-chart>
+        </div>
+    </div>
+</div>

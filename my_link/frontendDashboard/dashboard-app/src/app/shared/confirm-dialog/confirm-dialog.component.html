@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <div class="heading-modal-item">
+    <h4 class="modal-title">Thông báo</h4>
+  </div>
+  <span
+    ><i
+      class="fa-regular fa-rectangle-xmark"
+      style="cursor: pointer; font-size: 25px"
+      (click)="handleCloseModal()"
+    ></i
+  ></span>
+</div>
+<div class="modal-body">
+  <p>
+    <strong>Bạn có chắn chắc muốn xóa không? </strong>
+  </p>
+  <p>
+    Tất cả thông tin liên quan sẽ bị xóa!
+    <span class="text-danger"> Hành động này sẽ không thể trở lại.</span>
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary btn-custom-modal" (click)="handleCloseModal()">Hủy</button>
+  <button type="button" class="btn btn-danger btn-custom-modal" (click)="handleDelete()">Xác nhận</button>
+</div>

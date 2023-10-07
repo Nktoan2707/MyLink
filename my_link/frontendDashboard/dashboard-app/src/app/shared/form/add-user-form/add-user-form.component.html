@@ -1,0 +1,85 @@
+<div class="modal-header">
+    <div class="heading-modal-item">
+      <h4 class="modal-title">{{title}}</h4>
+    </div>
+    <span
+      ><i
+        class="fa-regular fa-rectangle-xmark"
+        (click)="handleCloseModal()"
+        style="cursor: pointer; font-size: 25px"
+      ></i
+    ></span>
+  </div>
+  <div class="modal-body">
+    <form
+      class="form-input"
+      [formGroup]="addForm"
+      (ngSubmit)="handleSubmitActionForm()"
+    >
+      <!-- Row 1 -->
+      <div class="input-control row-1">
+        <label for="username" class="label-input"
+          >Username <span class="text-danger">*</span></label
+        >
+        <input type="text" formControlName="username" class="input-text"/>
+        <span
+          class="text-danger error-text"
+          *ngIf="
+            addForm.get('username')?.hasError('required') &&
+            isFieldInvalid('username')
+          "
+          >Username là bắt buộc</span
+        >
+      </div>
+  
+      <!-- Row 2 -->
+      <div class="input-control row-1">
+        <label for="email" class="label-input"
+          >Email <span class="text-danger">*</span></label
+        >
+        <input type="email" formControlName="email" class="input-text" />
+        <span
+          class="text-danger error-text"
+          *ngIf="
+            addForm.get('email')?.hasError('required') &&
+            isFieldInvalid('email')
+          "
+          >Email là bắt buộc</span
+        >
+        <span
+          class="text-danger error-text"
+          *ngIf="
+            addForm.get('email')?.hasError('email') && isFieldInvalid('email')
+          "
+          >Email không hợp lệ</span
+        >
+      </div>
+      <div class="input-control row-2">
+        <label for="password" class="label-input"
+          >Password <span class="text-danger">*</span></label
+        >
+        <input type="password" formControlName="password" class="input-text" readonly/>
+      </div>
+
+      <div class="input-control row-2">
+        <label for="roles" class="label-input"
+          >Roles <span class="text-danger">*</span></label
+        >
+        <input type="text" formControlName="roles" class="input-text" readonly/>
+      </div>
+
+      <div class="buttons-action-form">
+        <button
+          type="button"
+          class="btn btn-secondary btn-custom-modal"
+          (click)="handleCloseModal()"
+        >
+          Hủy
+        </button>
+        <button type="submit" class="btn btn-primary btn-custom-modal">
+          Thêm
+        </button>
+      </div>
+    </form>
+  </div>
+  

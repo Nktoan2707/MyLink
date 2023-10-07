@@ -1,0 +1,77 @@
+<div class="container-wrapper">
+  <div class="title-page">Báo cáo doanh thu theo ngày</div>
+
+  <div class="card">
+    <div class="card-body">
+      <div
+        class="header-filter-and-download d-flex justify-content-between align-items-center"
+      >
+      <div class="header-fillter">
+          <label style="font-weight: bold; font-size: 20px; margin-right: 10px"
+            >Chọn thời gian</label
+          >
+          <mat-form-field>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Từ ngày" [(ngModel)]="startDateValue" />
+              <input matEndDate placeholder="Đến ngày" [(ngModel)]="endDateValue" />
+            </mat-date-range-input>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+  
+          <button type="button" class="btn btn-primary" (click)="getTableDataAndDataChart()" style="padding: 12px 40px; margin-left: 10px;"><span style="font-size: 20px;">Xem</span></button>
+      </div>
+      <div class="header-download">
+        <button type="button" class="btn btn-primary" (click)="handleExportExcel()"  [disabled]="!tableContent || tableContent.length === 0" style="padding: 12px 40px; margin-left: 10px;"><span style="font-size: 20px;">Download</span></button>
+      </div>
+      </div>
+
+      <div class="container-body">
+        <div class="container-chart" style="margin-top: 5%;" *ngIf="tableContent && tableContent.length > 0">
+            <h3 class="text-center" style="font-size: 20px;">Biểu đồ thể hiện Báo cáo Doanh thu theo ngày</h3>
+            <app-chart [chartLabels]="dates" [chartData]="dataChart"></app-chart>
+        </div>
+        <div class="container-table">
+            <div class="table-auto" style="margin-top: 30px; overflow-x: auto;">
+                <table class="table align-middle table-row-dashed fs-6 gy-5 gx-5">
+                  <thead class="table-success">
+                    <tr style="font-weight: bold !important; font-size: 16px; text-align: center;">
+                      <th
+                        scope="col"
+                        *ngFor="let columnHead of tableConfig; let x = index"
+                        [ngClass]="columnHead['nameClass']"
+                        class="align-middle"
+                        [ngClass]=" {'sticky-cell start-0': x === 0 }"
+                        style="min-width: 175px; max-width: 175px;"
+                      >
+                        {{ columnHead.title }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let columnData of tableContent; let i = index" style="font-size: 16px; text-align: center;"
+                    >
+                      <ng-container *ngFor="let columnHead of tableConfig; let x = index">
+                        <td
+                          class="align-middle text-body start-0"
+                          style="min-width: 175px; max-width: 175px;"
+                          [ngClass]="{ 'sticky-cell font-weight-bold start-0': x === 0 }"
+                          *ngIf="(i % 2 === 0 && columnHead['dataField'] === 'Thành phố') || columnHead['dataField'] !== 'Thành phố'"
+                          [attr.rowspan]="i % 2 === 0 && columnHead['dataField'] === 'Thành phố' ? 2 : 1"
+                          [ngStyle]="{ 'background-color': columnData['Color'] }"
+                        >
+                          {{ columnData[columnHead['dataField']] }}
+                        </td>
+                      </ng-container>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

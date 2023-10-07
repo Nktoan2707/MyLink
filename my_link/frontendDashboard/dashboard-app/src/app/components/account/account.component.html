@@ -1,0 +1,109 @@
+<div class="wrapper">
+    <div class="aside-profile">
+        <div class="basic-info-profile">
+            <div class="image-avatar">
+                <img src="{{userNow?.user?.image_url}}" alt="">
+            </div>
+            <div class="info-basic">
+                <h4 class="info-username">{{userNow?.user?.username}}</h4>
+                <p class="info-email">{{userNow?.user?.email}}</p>
+            </div>
+        </div>
+
+        <div class="action-profile">
+            <ul class="action-profile-list">
+                <li class="action-profile-list-item">
+                    <a routerLink="/my-account">Profile</a>
+                </li>
+                <li class="action-profile-list-item">
+                    <a routerLink="/my-account/edit">Edit Profile</a>
+                </li>
+                <li class="action-profile-list-item">
+                    <a routerLink="/my-account/change-password">Change password</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="profile-main">
+        <h3 class="title text-center text-uppercase">Thông tin tài khoản</h3>
+        <!-- <div class="slogan-post">
+            <textarea placeholder="Nhập châm ngôn của bạn"></textarea>
+            <button class="btn btn-primary">Post</button>
+        </div> -->
+
+        <div class="slogan-description">
+            <p>Học, học nữa, học mãi</p>
+        </div>
+
+        <div class="info-main">
+            <div class="row-1">
+                <p><span class="tag-name">Họ và tên: </span>{{userNow?.full_name}}</p>
+                <p><span class="tag-name">Giới tính: </span>Nam</p>
+            </div>
+
+            <div class="row-2">
+                <p><span class="tag-name">Số điện thoại: </span>{{userNow?.phone_number}}</p>
+                <p><span class="tag-name">Email: </span>{{userNow?.user?.email}}</p>
+            </div>
+
+            <div class="row-3">
+                <p><span class="tag-name">Chức vụ: </span>Admin</p>
+                <p><span class="tag-name">Ngày sinh: </span>23-10-2002</p>
+            </div>
+        </div>
+
+        <!-- <div class="achivements">
+            <h2 class="title-part-achivement">Khen thưởng</h2>
+            <div class="achivement-list">
+                <div class="card">
+                    <div class="number-recive">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1684770095/cld-sample-4.jpg" alt="">
+                        <span class="fw-bold">Số lần nhận: <span class="text-success">1</span></span>
+                    </div>
+                    <div class="achivement-description">
+                        <h3 class="title-achivement">Giải thưởng 01</h3>
+                        <p class="date-receive-achivement">Ngày nhận mới nhất: 08-10-2022</p>
+                        <p class="description-achivement">Giải thưởng dành cho nhân viên xuất sắc</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="number-recive">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1684770095/cld-sample-4.jpg" alt="">
+                        <span class="fw-bold">Số lần nhận: <span class="text-success">1</span></span>
+                    </div>
+                    <div class="achivement-description">
+                        <h3 class="title-achivement">Giải thưởng 01</h3>
+                        <p class="date-receive-achivement">Ngày nhận mới nhất: 08-10-2022</p>
+                        <p class="description-achivement">Giải thưởng dành cho nhân viên xuất sắc</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="number-recive">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1684770095/cld-sample-4.jpg" alt="">
+                        <span class="fw-bold">Số lần nhận: <span class="text-success">1</span></span>
+                    </div>
+                    <div class="achivement-description">
+                        <h3 class="title-achivement">Giải thưởng 01</h3>
+                        <p class="date-receive-achivement">Ngày nhận mới nhất: 08-10-2022</p>
+                        <p class="description-achivement">Giải thưởng dành cho nhân viên xuất sắc</p>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="number-recive">
+                        <img src="https://res.cloudinary.com/dc733dlvp/image/upload/v1684770095/cld-sample-4.jpg" alt="">
+                        <span class="fw-bold">Số lần nhận: <span class="text-success">1</span></span>
+                    </div>
+                    <div class="achivement-description">
+                        <h3 class="title-achivement">Giải thưởng 01</h3>
+                        <p class="date-receive-achivement">Ngày nhận mới nhất: 08-10-2022</p>
+                        <p class="description-achivement">Giải thưởng dành cho nhân viên xuất sắc</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="wrapper-background">
+  <div class="wrapper">
+    <div class="form-container">
+      <form
+        class="form-input"
+        [formGroup]="loginForm"
+        (ngSubmit)="handleLogin()"
+      >
+        <h3 class="heading-form">Login</h3>
+        <div class="input-control">
+          <label for="username" class="label-input"
+            ><i class="fa-solid fa-envelope"></i> Username</label
+          >
+          <input type="text" formControlName="username" class="input-text" />
+          <span
+            class="text-danger error-text"
+            *ngIf="
+              loginForm.get('username')?.hasError('required') &&
+              isFieldInvalid('username')
+            "
+            >Username là bắt buộc</span
+          >
+          <span
+            class="text-danger error-text"
+            *ngIf="
+              loginForm.get('username')?.hasError('email') &&
+              isFieldInvalid('username')
+            "
+            >Username không hợp lệ</span
+          >
+        </div>
+        <div class="input-control">
+          <label for="password" class="label-input"
+            ><i class="fa-solid fa-unlock-keyhole"></i> Password</label
+          >
+          <input
+            type="password"
+            formControlName="password"
+            class="input-text"
+          />
+          <span
+            class="text-danger error-text"
+            *ngIf="
+              loginForm.get('password')?.hasError('required') &&
+              isFieldInvalid('password')
+            "
+            >Password là bắt buộc</span
+          >
+          <span
+            class="text-danger error-text"
+            *ngIf="
+              loginForm.get('password')?.hasError('minlength') &&
+              isFieldInvalid('password')
+            "
+            >Password phải có ít nhất 6 ký tự</span
+          >
+        </div>
+        <div class="input-control d-flex align-items-center">
+          <input type="checkbox" />
+          <span class="ms-1">Remember me</span>
+        </div>
+
+        <button class="btn btn-primary btn-login" [disabled]="loginForm.invalid" type="submit">Login</button>
+      </form>
+    </div>
+    <div class="image-aside-form">
+      <img src="assets/images/background-aside-login-form.avif" />
+    </div>
+  </div>
+</div>

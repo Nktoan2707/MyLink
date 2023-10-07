@@ -1,0 +1,131 @@
+.text-heading-sidebar {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.logo {
+  text-align: center;
+  padding: 2.6rem 1rem;
+  img {
+    width: 200px;
+  }
+}
+
+.logo img {
+  border-radius: 10px;
+}
+
+.mat-divider {
+  border-top-width: 2px;
+  border-color: white;
+}
+
+.mat-subheader {
+  color: #818cf8;
+  font-size: 0.6rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.icon-list-item-side-bar path {
+  fill: #f2f5f7 !important;
+}
+.item-list-side-bar-text {
+  color: white;
+  margin-left: 5px;
+  line-height: 20px;
+}
+.item-list-side-bar-text-drop-down {
+  font-size: 16px;
+  color: white;
+}
+.mat-mdc-list-item-unscoped-content {
+  color: #f2f5f7 !important;
+}
+
+// CSS for PrimeNG
+:host ::ng-deep .p-menubar .p-menuitem-text {
+  color: white;
+  font-size: 16px;
+}
+:host ::ng-deep .p-menubar .p-menubar-root-list .p-icon-wrapper,
+.p-menubar .p-submenu-list .p-menuitem-link .p-icon-wrapper {
+  color: white;
+}
+:host ::ng-deep .fa-users-gear::before {
+  color: white;
+  font-size: 16px;
+}
+:host ::ng-deep .p-menubar {
+  min-height: 48px;
+  padding: 0 16px;
+}
+:host ::ng-deep .p-menubar .p-menuitem-link {
+  height: 30px;
+}
+
+.list-item-side-bar:hover {
+  background-color: #e0e0e0;
+}
+
+.list-item-active {
+  background-color: #f0f0f0 !important;
+  color: #ccc !important;
+}
+
+// Accordion
+.accordion-item {
+  border-radius: 0;
+  border: none;
+  width: 100%;
+}
+
+.accordion-button {
+  background: #041438;
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  color: white;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 0;
+}
+
+.accordion-item:first-of-type .accordion-button {
+  border-radius: 0;
+}
+
+.accordion-header {
+  font-size: 16px;
+  color: white;
+}
+
+.item-dropdown-accordion {
+  display: block;
+  font-size: 16px;
+  color: white;
+  height: 30px;
+  background: #041438;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 30px;
+}
+
+.item-dropdown-accordion:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-body {
+  padding: 0;
+  text-indent: 10%;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+}

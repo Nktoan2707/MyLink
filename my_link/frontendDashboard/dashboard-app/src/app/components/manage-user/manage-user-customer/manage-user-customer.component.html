@@ -1,0 +1,28 @@
+<div class="container-wrapper">
+    <div class="title-page">Quản lí Khách hàng</div>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="header-card-search">
+                <div>
+                    <label class="label-input-search" for="search">Tìm kiếm</label>
+                    <input class="input-search" type="search" id="search" [(ngModel)]="searchText" (ngModelChange)="handleSearch($event)"/>
+                </div>
+                <div class="card-toolbar" style="gap: 10px">
+                    <button mat-button [matMenuTriggerFor]="menu" style="font-size: 14px;" class="btn btn-primary btn-active-color-primary d-inline-flex align-items-center button-action ml-3">
+                      <span>Hành động</span>
+                      <img src="https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/new-portal/dropdown-icon.svg" alt="" class="w-15px ml-1" />
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <a mat-menu-item (click)="handleAddCustomer()">Thêm</a>
+                      <a mat-menu-item (click)="handleExportExcel()">Export Excel</a>
+                    </mat-menu>
+                  </div>
+            </div>
+
+            <div class="table">
+              <app-table-template [nameOfTable]="'customer'" [tableContent]="tableContent" [tableConfig]="tableConfig" [itemsPerPage]="itemsPerPage"></app-table-template>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+<div id="sidebar">
+  <mat-nav-list>
+    <div class="logo py-4">
+      <img
+        src="https://res.cloudinary.com/dc733dlvp/image/upload/v1692559109/admin-page-my-link/logo-mailinh_fr0slf.png"
+        alt="Company Logo"
+      />
+    </div>
+    <mat-divider></mat-divider>
+    <h2 matSubheader class="mt-2 text-center text-heading-sidebar">
+      ADMIN MY LINK
+    </h2>
+
+    <a
+      class="list-item-side-bar"
+      mat-list-item
+      routerLinkActive="list-item-active"
+      routerLink="/dashboard"
+    >
+      <svg
+        class="icon-list-item-side-bar"
+        xmlns="http://www.w3.org/2000/svg"
+        height="1em"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"
+        />
+      </svg>
+      <span class="item-list-side-bar-text">Dashboard</span>
+    </a>
+
+    <div class="accordion" id="accordion-manage-statistics">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#pannel-manage-statistics"
+            aria-expanded="true"
+            aria-controls="pannel-manage-statistics"
+          >
+            <i class="fa-solid fa-money-bills"></i>
+            <span class="item-list-side-bar-text">Quản lí doanh thu</span>
+          </button>
+        </h2>
+        <div
+          id="pannel-manage-statistics"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/statistics/revenue-report"
+              ><i class="fa-solid fa-chevron-right"></i> BC Doanh thu theo
+              ngày</a
+            >
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/statistics/top-driver"
+              ><i class="fa-solid fa-chevron-right"></i> Top tài xế</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordion-manage-account">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#pannel-manage-account"
+            aria-expanded="true"
+            aria-controls="pannel-manage-account"
+          >
+            <i class="fa-solid fa-users-gear"></i>
+            <span class="item-list-side-bar-text">Quản lí tài khoản</span>
+          </button>
+        </h2>
+        <div
+          id="pannel-manage-account"
+          class="accordion-collapse collapse show"
+        >
+          <div class="accordion-body">
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/manage-account/admin-account"
+              ><i class="fa-solid fa-chevron-right"></i> QLTK Admin</a
+            >
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/manage-account/employee-account"
+              ><i class="fa-solid fa-chevron-right"></i> QLTK Nhân viên</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion" id="accordion-manage-user">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#pannel-manage-user"
+            aria-expanded="true"
+            aria-controls="pannel-manage-user"
+          >
+            <i class="fa-solid fa-users-rectangle"></i>
+            <span class="item-list-side-bar-text">Quản lí người dùng</span>
+          </button>
+        </h2>
+        <div id="pannel-manage-user" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/manage-user/driver-user"
+              ><i class="fa-solid fa-chevron-right"></i> Quản lí tài xế</a
+            >
+            <a
+              class="item-dropdown-accordion"
+              routerLinkActive="list-item-active"
+              routerLink="/manage-user/customer-user"
+              ><i class="fa-solid fa-chevron-right"></i> Quản lí khách hàng</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a
+      mat-list-item
+      class="list-item-side-bar"
+      routerLinkActive="list-item-active"
+      routerLink="/my-account"
+    >
+      <svg
+        class="icon-list-item-side-bar"
+        xmlns="http://www.w3.org/2000/svg"
+        height="1em"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+        />
+      </svg>
+      <span class="item-list-side-bar-text">Tài khoản cá nhân</span>
+    </a>
+  </mat-nav-list>
+</div>

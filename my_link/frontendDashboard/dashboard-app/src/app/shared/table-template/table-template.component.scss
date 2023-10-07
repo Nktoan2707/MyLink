@@ -1,0 +1,114 @@
+.table-auto {
+  overflow-x: auto;
+}
+
+.smaller-width {
+  min-width: 60px;
+  max-width: 100px;
+}
+
+.adjust-width-auto {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+tr {
+  overflow-x: auto;
+}
+
+.table {
+  td {
+    background-color: #fff;
+    z-index: 2;
+  }
+  tr {
+    &:nth-child(even) {
+      td {
+        background-color: #f8f0f0;
+      }
+    }
+  }
+}
+
+// Button
+.btn-customer-in-table {
+  height: 30px;
+  margin-right: 10px;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+// Pagination
+.pagination-wrap {
+  margin-top: 20px;
+  > span {
+    flex-grow: 1;
+  }
+}
+
+.pagination-container {
+  .ngx-pagination {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+
+    border-radius: 8px;
+    padding: 8px;
+    li {
+      padding: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      &:not(:last-child) {
+        margin-right: 5px;
+      }
+      a {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+      span {
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.show-for-sr {
+          display: none;
+        }
+      }
+      &.current {
+        background: rgb(88, 88, 237);
+      }
+      &.disabled {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .ngx-pagination .pagination-next a::after,
+  .ngx-pagination .pagination-next.disabled::after {
+    content: "";
+    background: url("https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/new-portal/report/arrow.svg");
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+  }
+  .ngx-pagination .pagination-previous a::before,
+  .ngx-pagination .pagination-previous.disabled::before {
+    content: "";
+    background: url("https://hi-static.fpt.vn/sys/hifpt/pnc_pdx/new-portal/report/pagination-left.svg");
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

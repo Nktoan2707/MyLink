@@ -1,0 +1,324 @@
+<div class="modal-header">
+  <div class="heading-modal-item">
+    <h4 class="modal-title">{{title}}</h4>
+  </div>
+  <span
+    ><i
+      class="fa-regular fa-rectangle-xmark"
+      (click)="handleCloseModal()"
+      style="cursor: pointer; font-size: 25px"
+    ></i
+  ></span>
+</div>
+<div class="modal-body">
+  <form
+    class="form-input"
+    [formGroup]="actionForm"
+    (ngSubmit)="handleSubmitActionForm()"
+  >
+    <!-- Row 1 -->
+    <div class="input-control row-1">
+      <label for="id" class="label-input"
+        >ID</label
+      >
+      <input type="number" formControlName="id" class="input-text" readonly />
+      <!-- <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('id')?.hasError('required') && isFieldInvalid('id')
+        "
+        >ID là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="actionForm.get('id')?.hasError('id') && isFieldInvalid('id')"
+        >ID không hợp lệ</span
+      > -->
+    </div>
+    <div class="input-control row-1">
+      <label for="username" class="label-input"
+        >Username</label
+      >
+      <input type="text" formControlName="username" class="input-text" readonly/>
+      <!-- <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('id')?.hasError('required') && isFieldInvalid('id')
+        "
+        >ID là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="actionForm.get('id')?.hasError('id') && isFieldInvalid('id')"
+        >ID không hợp lệ</span
+      > -->
+    </div>
+    <!-- <div class="input-control row-1">
+      <label for="password" class="label-input"
+        >Username <span class="text-danger">*</span></label
+      >
+      <input type="password" formControlName="password" class="input-text" />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('password')?.hasError('required') &&
+          isFieldInvalid('password')
+        "
+        >Password là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('password')?.hasError('minlength') &&
+          isFieldInvalid('password')
+        "
+        >Password phải có ít nhất 6 ký tự</span
+      >
+    </div> -->
+
+    <!-- Row 2 -->
+    <div class="input-control row-2">
+      <label for="email" class="label-input"
+        >Email</label
+      >
+      <input type="email" formControlName="email" class="input-text" />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('email')?.hasError('required') &&
+          isFieldInvalid('email')
+        "
+        >ID là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('email')?.hasError('email') && isFieldInvalid('email')
+        "
+        >Email không hợp lệ</span
+      >
+    </div>
+    <div class="input-control row-2">
+      <label for="phoneNumber" class="label-input"
+        >Số điện thoại</label
+      >
+      <input type="text" formControlName="phoneNumber" class="input-text" />
+      <!-- <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('phoneNumber')?.hasError('required') &&
+          isFieldInvalid('phoneNumber')
+        "
+        >Số điện thoại là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('phoneNumber')?.hasError('phoneNumber') &&
+          isFieldInvalid('phoneNumber')
+        "
+        >Số điện thoại không hợp lệ</span
+      > -->
+    </div>
+
+    <!-- Row 3 -->
+    <!-- <div class="input-control row-3">
+      <label for="licenseNumber" class="label-input"
+        >Biển số xe <span class="text-danger">*</span></label
+      >
+      <input type="text" formControlName="licenseNumber" class="input-text" />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('licenseNumber')?.hasError('required') &&
+          isFieldInvalid('licenseNumber')
+        "
+        >Biển số xe là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('licenseNumber')?.hasError('licenseNumber') &&
+          isFieldInvalid('licenseNumber')
+        "
+        >Biển số xe không hợp lệ</span
+      >
+    </div>
+    <div class="input-control row-3">
+      <label for="typeVehicleRegistering" class="label-input"
+        >Loại xe đăng kí <span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        formControlName="typeVehicleRegistering"
+        class="input-text"
+      />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('typeVehicleRegistering')?.hasError('required') &&
+          isFieldInvalid('typeVehicleRegistering')
+        "
+        >Loại xe đăng kí là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm
+            .get('typeVehicleRegistering')
+            ?.hasError('typeVehicleRegistering') &&
+          isFieldInvalid('typeVehicleRegistering')
+        "
+        >Loại xe đăng kí không hợp lệ</span
+      >
+    </div> -->
+
+    <!-- Row 4 -->
+    <div class="input-control row-4">
+      <label for="address" class="label-input"
+        >Địa chỉ</label
+      >
+      <input type="text" formControlName="address" class="input-text" />
+      <!-- <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('address')?.hasError('required') &&
+          isFieldInvalid('address')
+        "
+        >Địa chỉ là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('address')?.hasError('address') &&
+          isFieldInvalid('address')
+        "
+        >Địa chỉ không hợp lệ</span -->
+      <!-- > -->
+    </div>
+
+    <div class="input-control row-4">
+      <label for="fullName" class="label-input"
+        >Họ và tên</label
+      >
+      <input type="text" formControlName="fullName" class="input-text" />
+      <!-- <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('address')?.hasError('required') &&
+          isFieldInvalid('address')
+        "
+        >Địa chỉ là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('address')?.hasError('address') &&
+          isFieldInvalid('address')
+        "
+        >Địa chỉ không hợp lệ</span -->
+      <!-- > -->
+    </div>
+    
+    <!-- <div class="input-control row-4">
+      <label for="bankingNumber" class="label-input"
+        >Số tài khoản ngân hàng <span class="text-danger">*</span></label
+      >
+      <input type="text" formControlName="bankingNumber" class="input-text" />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('bankingNumber')?.hasError('required') &&
+          isFieldInvalid('bankingNumber')
+        "
+        >Số tài khoản ngân hàng là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('bankingNumber')?.hasError('bankingNumber') &&
+          isFieldInvalid('bankingNumber')
+        "
+        >Số tài khoản ngân hàng không hợp lệ</span
+      >
+    </div> -->
+
+    <!-- Row 5 -->
+    <!-- <div class="input-control row-5">
+      <label for="startDate" class="label-input"
+        >Ngày bắt đầu nhận việc <span class="text-danger">*</span></label
+      >
+      <input type="text" formControlName="startDate" class="input-text" />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('startDate')?.hasError('required') &&
+          isFieldInvalid('startDate')
+        "
+        >Ngày bắt đầu nhận việc là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('startDate')?.hasError('startDate') &&
+          isFieldInvalid('startDate')
+        "
+        >Ngày bắt đầu nhận việc không hợp lệ</span
+      >
+    </div> -->
+    <!-- <div class="input-control row-5">
+      <label for="companyTenture" class="label-input"
+        >Số ngày gắn bó với công ty</label
+      >
+      <input
+        type="text"
+        formControlName="companyTenture"
+        class="input-text"
+        readonly
+      />
+    </div> -->
+
+    <!-- Row 6 -->
+    <!-- <div class="input-control row-6">
+      <label for="insuranceInformation" class="label-input"
+        >Thông tin bảo hiểm <span class="text-danger">*</span></label
+      >
+      <input
+        type="text"
+        formControlName="insuranceInformation"
+        class="input-text"
+      />
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm.get('insuranceInformation')?.hasError('required') &&
+          isFieldInvalid('insuranceInformation')
+        "
+        >Thông tin bảo hiểm là bắt buộc</span
+      >
+      <span
+        class="text-danger error-text"
+        *ngIf="
+          actionForm
+            .get('insuranceInformation')
+            ?.hasError('insuranceInformation') &&
+          isFieldInvalid('insuranceInformation')
+        "
+        >Thông tin bảo hiểm không hợp lệ</span
+      >
+    </div> -->
+
+    <div class="buttons-action-form">
+      <button
+        type="button"
+        class="btn btn-secondary btn-custom-modal"
+        (click)="handleCloseModal()"
+      >
+        Hủy
+      </button>
+      <button type="submit" class="btn btn-primary btn-custom-modal">
+        Thêm
+      </button>
+    </div>
+  </form>
+</div>

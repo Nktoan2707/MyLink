@@ -1,0 +1,280 @@
+@import "../../../../variable";
+
+.container-wrapper {
+  height: calc(100vh - 64px);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.title-page {
+  background-color: $primary-color;
+  height: 50px;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  padding-left: 16px;
+}
+
+.container-tops {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 5%;
+
+  &-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+
+    .top-1,
+    .top-2,
+    .top-3 {
+      width: 100%;
+      border-radius: 15px;
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .top-1:hover,
+    .top-2:hover,
+    .top-3:hover {
+        transform: scale(1.1); 
+    }
+
+    .top-2,
+    .top-3 {
+      margin-top: 10%;
+    }
+  }
+
+  &-left {
+    width: 100%;
+    margin-top: 5%;
+
+    .list-tops-left {
+      width: 100%;
+      list-style: none;
+
+      &-item {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 2%;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// Tops in 3
+.top-1,
+.top-2,
+.top-3 {
+  background-color: #fff;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+
+  .title-rank {
+    font-size: 20px;
+    color: #fff;
+    background-color: #238dd9;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -4%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 30px;
+    padding: 5px 10px;
+    line-height: 20px;
+  }
+
+  .avatar {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid #e7e7e7;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      width: 190px;
+      height: 190px;
+      border: 2px solid #e7e7e7;
+      border-radius: 50%;
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  .star-ranking {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+  }
+
+  .info-tops-in-3 {
+    text-align: center;
+    margin-top: 5%;
+
+    .username {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 15px;
+    }
+
+    .email {
+        font-size: 15px;
+        color: #ccc;
+        font-weight: 300;
+        line-height: 15px;
+    }
+  }
+
+  .point-number {
+    background-color: #e9f2f9 ;
+    width: 100%;
+    height: 40px;
+
+    span {
+        color: #257cbc;
+        font-size: 30px;
+        font-weight: 600;
+        text-align: center;
+        display: block;
+    }
+  }
+
+  .point-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+    text-align: center;
+    display: block;
+    line-height: 30px;
+  }
+}
+
+// Rating
+i {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  padding-right: 0.1rem;
+  color: #d3d3d3;
+}
+
+.filled {
+  color: #fbc02e ;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// Tops left
+.container-tops-left {
+    width: 80%;
+    margin: 5% auto;
+
+    .list-tops-left {
+        padding: 20px 0;
+
+        &-item {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 60px repeat(6, 1fr);
+            column-gap: 5px;
+            margin-bottom: 30px;
+            height: 80px;
+            position: relative;
+            cursor: pointer;
+
+            .number-ranking-lefts {
+                grid-column: 1 / 2;
+                font-size: 20px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .avatar {
+                grid-column: 2 / 3;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                position: absolute;
+                top: -10px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                }
+            }
+            
+            .info-basic {
+                margin-left: 30px;
+                grid-column: 3 / 6;
+
+                .username {
+                    display: block;
+                    font-size: 30px;
+                    font-weight: 600;
+                }
+
+                .email {
+                    display: block;
+                    font-size: 16px;
+                    color: #ccc;
+                    font-weight: 300;
+                }
+            }
+
+            .star-ranking {
+                grid-column: 6 / 7;
+                
+                &-tops-left {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    span {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .container-score {
+                grid-column: 7 / -1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: #04dbba;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+
+                .score-text {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #f7f1f1;
+                    display: block;
+                }
+
+                .score-number {
+                    display: block;
+                    font-size: 25px;
+                    color: #fff;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
